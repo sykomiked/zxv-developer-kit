@@ -2,9 +2,10 @@
 
 **Drop-in integration for the paraconsistent settlement layer on NEAR mainnet.**
 
-The ZXV world computer is 18 registered subsystems (13 originals + the
-consolidated `zxv-core` covering verdict-guard, treasury, rails, and
-receipts) — all discoverable through one registry call. This kit gives
+The ZXV world computer is 66 registered capabilities on NEAR mainnet (13
+original subsystems + the 48-kit consolidated `zxv-core`: 28 base + 5
+layers + 7 systems + 4 meta + 4 api) — all discoverable through one
+registry call. This kit gives
 you the four-valued gate, the rail card networks, the dispute-tolerant
 oracle, the work-based treasury, and the receipt chain — typed, verified,
 one import.
@@ -20,7 +21,7 @@ one import.
 │        │                                                     │
 │        ▼                                                     │
 │  ┌───────────────────────────────────────────────────────┐   │
-│  │  NEAR mainnet — 18 registered subsystems              │   │
+│  │  NEAR mainnet — 66 registered capabilities              │   │
 │  │  gate · ledger · registry · oracle · bus · shield ·   │   │
 │  │  micro_infer · model_registry · consumer ·            │   │
 │  │  paraconsistent_oracle · settlement_router ·          │   │
@@ -72,13 +73,13 @@ npm install @zxv/developer-kit
 import { Zxv, LogicState } from "@zxv/developer-kit";
 
 const zxv = new Zxv();
-const caps = await zxv.discover();                    // 18 subsystems
+const caps = await zxv.discover();                    // 66 capabilities
 const net  = await zxv.verifyCard("88090016741821469134"); // "dragon"
 const price = await zxv.oraclePrice("NEAR");          // dispute-tolerant
 const ok  = await zxv.isSettleable(LogicState.BOTH);  // false
 ```
 
-## The 18 subsystems
+## The 66 capabilities (the 48-kit stack)
 
 | Capability | Account | Role |
 |---|---|---|
